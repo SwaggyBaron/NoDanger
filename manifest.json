@@ -1,22 +1,21 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name": "No Danger",
     "version": "1.0",
     "description": "Опасности нет",
     "permissions": [
         "activeTab",
-        "https://*/*",
-        "http://*/*"
+        "scripting"
     ],
-    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+    "host_permissions": [
+        "<all_urls>"
+    ],
     "content_scripts": [
         {
             "matches": [
                 "<all_urls>"
             ],
             "js": [
-                "lib/tf.min.js",
-                "lib/coco-ssd.min.js",
                 "content.js"
             ],
             "run_at": "document_idle"
