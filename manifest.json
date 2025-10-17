@@ -1,15 +1,14 @@
 {
-    "manifest_version": 3,
-    "name": "No Danger/Image Filter",
+    "manifest_version": 2,
+    "name": "No Danger",
     "version": "1.0",
-    "description": "Скрывает пауков на видео и картинках",
+    "description": "Опасности нет",
     "permissions": [
         "activeTab",
-        "scripting"
+        "https://*/*",
+        "http://*/*"
     ],
-    "host_permissions": [
-        "<all_urls>"
-    ],
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
     "content_scripts": [
         {
             "matches": [
