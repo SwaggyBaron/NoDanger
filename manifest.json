@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+    "name": "No Danger/Image Filter",
+    "version": "1.0",
+    "description": "Скрывает пауков на видео и картинках",
+    "permissions": [
+        "activeTab",
+        "scripting"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "lib/tf.min.js",
+                "lib/coco-ssd.min.js",
+                "content.js"
+            ],
+            "run_at": "document_idle"
+        }
+    ]
+}
